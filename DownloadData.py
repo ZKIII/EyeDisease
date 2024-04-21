@@ -13,18 +13,20 @@ def main():
     print("Download Data...")
     os.system("gdown https://drive.google.com/uc?id=1HTOOXIrf4iFd88u2gdCI7jPovKhSGRYx")
     print("Unzip Data Folder...")
-    data = zipfile.ZipFile("Data.zip", 'r')
-    for d in data.namelist():
-        data.extract(d, "")
-    data.close()
+    if os.path.exists("Data.zip"):
+        data = zipfile.ZipFile("Data.zip", 'r')
+        for d in data.namelist():
+            data.extract(d, "")
+        data.close()    
 
     print("Download Saved_Models...")
     os.system("gdown https://drive.google.com/uc?id=1862QUN49PRLHCAuLBFew8U9YBJVN8sqw")
     print("Unzip Saved_Models Folder...")
-    saved_models = zipfile.ZipFile("Saved_Models.zip", 'r')
-    for s in saved_models.namelist():
-        saved_models.extract(s, "")
-    saved_models.close()
+    if os.path.exists("Saved_Models.zip"):
+        saved_models = zipfile.ZipFile("Saved_Models.zip", 'r')
+        for s in saved_models.namelist():
+            saved_models.extract(s, "")
+        saved_models.close()
 
     if os.path.exists("Data.zip"):
         os.remove("Data.zip")

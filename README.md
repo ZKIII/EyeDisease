@@ -21,7 +21,7 @@
 ## Python Scripts Introduction
 
 * `DownloadData.py`
-  * Download eye diseases images data and trained models from google drive. Create necessary folders.
+  * Download eye diseases images data and trained models from google drive. Create necessary folders. <span style="color: red;">There is a limitation of download file by gdown. If download fail, you may need to download and unzip [`Data.zip`](https://drive.google.com/file/d/1HTOOXIrf4iFd88u2gdCI7jPovKhSGRYx/view?usp=drive_link) and [`Saved_Models.zip`](https://drive.google.com/file/d/1862QUN49PRLHCAuLBFew8U9YBJVN8sqw/view?usp=drive_link) manually. Make sure the path is correct(`Data/train/*.png`, `Data/dataset.csv`, `Data/all_data.pkl`, `Saved_Models/*.pth`).</span>
 
 * `DataTransform.py`
   * Class `DataTransform` loads original data sets and splits them into training and test sets. All data sets will be saved into `Data/all_data.pkl`.
@@ -58,9 +58,9 @@
 
 ## Execution
 
-* Introduction of all scripts influences
+* Introduction of all scripts
 
-  * Run `DownloadData.py` to get all required files.
+  * Run `DownloadData.py` to get all required files. Download eye diseases images data and trained models from google drive. Create necessary folders. <span style="color: red;">There is a limitation of download file by gdown. If download fail, you may need to download and unzip [`Data.zip`](https://drive.google.com/file/d/1HTOOXIrf4iFd88u2gdCI7jPovKhSGRYx/view?usp=drive_link) and [`Saved_Models.zip`](https://drive.google.com/file/d/1862QUN49PRLHCAuLBFew8U9YBJVN8sqw/view?usp=drive_link) manually. Make sure the path is correct(`Data/train/*.png`, `Data/dataset.csv`, `Data/all_data.pkl`, `Saved_Models/*.pth`).</span>
 
   * For generating data(e.g., resize the training and test set and shuffle the data set), just run `DataTransform.py`. You may select prefer training and test set size or shuffle data set. The file `all_data.pkl` in `Data` folder will be replaced.
 

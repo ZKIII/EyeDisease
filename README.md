@@ -13,6 +13,8 @@
   > All required packages are listed in the `requirements.txt` file.
 
   * Install packages with command line: `pip install -r requirements.txt`
+  
+* It is better if cuda is available on device. Running without cuda may take a long time to train and evaluate models.
 
 
 

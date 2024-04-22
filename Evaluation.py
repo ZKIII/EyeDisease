@@ -60,7 +60,10 @@ def acc(model_name, data, y_class, index, device):
 
     # load model
     model_path = f"Saved_Models/{model_name}_{y_class}.pth"
-    model = torch.load(model_path)
+    if not torch.cuda.is_available():
+        model = torch.load(model_path, map_location=torch.device('cpu'))
+    else:
+        model = torch.load(model_path)
 
     total_acc = 0
     pred_test_lst = []

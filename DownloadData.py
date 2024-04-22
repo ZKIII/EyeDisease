@@ -2,10 +2,6 @@ import os
 import zipfile
 
 def main():
-    loss_acc_folder = os.path.join(os.getcwd(), 'Losses_Acc')
-    if not os.path.exists(loss_acc_folder):
-        os.makedirs(loss_acc_folder)
-
     reports_folder = os.path.join(os.getcwd(), 'Reports')
     if not os.path.exists(reports_folder):
         os.makedirs(reports_folder)
@@ -28,11 +24,23 @@ def main():
             saved_models.extract(s, "")
         saved_models.close()
 
+    print("Download Losses_Acc...")
+    os.system("gdown https://drive.google.com/uc?id=163qWhbsJfH-VzBk4CEhzCaC93RwWtc_Z")
+    print("Unzip Losses_Acc Folder...")
+    if os.path.exists("Losses_Acc.zip"):
+        losses_acc = zipfile.ZipFile("Losses_Acc.zip", 'r')
+        for l in losses_acc.namelist():
+            losses_acc.extract(l, "")
+        losses_acc.close()
+
     if os.path.exists("Data.zip"):
         os.remove("Data.zip")
 
     if os.path.exists("Saved_Models.zip"):
         os.remove("Saved_Models.zip")
+
+    if os.path.exists("Losses_Acc.zip"):
+        os.remove("Losses_Acc.zip")
 
 
 if __name__ == "__main__":
